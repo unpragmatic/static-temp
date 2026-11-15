@@ -91,6 +91,20 @@ button:hover:not(:disabled) { filter: brightness(.92); }
 footer { border-top: 1px solid var(--line); padding: 24px 48px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; }
 footer .brand { font-size: 10px; } footer a { margin-left: 20px; }
 .noscript { padding: 20px; border: 1px solid var(--accent); }
+.season-banner, .addendum-banner { border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; }
+.season-banner { background: #f0e6d8; font-size: 13px; }
+.season-banner p, .addendum-banner p { color: var(--muted); margin-bottom: 0; }
+.addendum-banner { margin: 28px 0 0; background: var(--white); }
+.addendum-banner p { max-width: 850px; font-size: 14px; }
+.addendum-banner a { display: inline-block; margin-top: 14px; font-size: 12px; }
+.return-line { fill: none; stroke: #65776b; stroke-width: 2; stroke-dasharray: 3 7; }
+.return-line.active-return { stroke: var(--accent); stroke-width: 3; }
+.stay-dates { font-size: 12px; color: var(--muted); margin: 12px 0 0; }
+.stay-meta { flex-wrap: wrap; }
+.detail-date { display: block; color: var(--muted); font-size: 12px; margin-top: 6px; }
+.card-date { display: block; font-size: 11px; color: var(--muted); margin-top: 5px; }
+.addendum-card { background: #f0f3e9; }
+.source-links { font-size: 11px; color: var(--muted); margin-top: 24px; }
 @media (max-width: 1050px) {
   .stats { position: static; margin-top: 30px; }
   .stats div:first-child { padding-left: 0; border: 0; }

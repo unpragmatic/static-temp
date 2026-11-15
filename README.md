@@ -1,9 +1,18 @@
 # Northbound / Japan
 
-A dependency-free, interactive overview of an 18-day Japan trip from Kagoshima
-to Sapporo. Explore seven overnight bases on a schematic route map, select
-individual days, and filter the full itinerary by island. Day 18 is departure;
-the trip includes 17 nights. Transport guidance is approximate, not live.
+A dependency-free, interactive overview of a 20-day Japan trip dated
+November 17-December 6, 2026. Travel from Kagoshima to Sapporo, with a short
+two-day Tokyo stay northbound and a four-calendar-day Tokyo addendum at the end.
+The addendum includes arrival, two full sightseeing days, and departure.
+Explore seven cities across eight stays on a schematic route map, select
+dated individual days, and filter by island or Tokyo addendum. Day 20 is
+departure from Tokyo; the trip includes 19 nights.
+
+The plan accounts for the November 21-23 holiday weekend, late-autumn foliage
+opportunities, and early-winter Hokkaido with short daylight and indoor
+alternatives. Dates and route are planning assumptions, not bookings.
+Transport times and seasonal guidance are approximate, not live forecasts,
+confirmed openings, or availability checks.
 
 ## Run locally
 
