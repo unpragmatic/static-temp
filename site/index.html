@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173e37">
-  <meta name="description" content="A dated 20-day Japan itinerary, November 17 to December 6, 2026. Travel from Kagoshima to Hokkaido, then finish with four days in Tokyo.">
-  <title>Northbound / 20 days in Japan / Nov 17 - Dec 6, 2026</title>
+  <meta name="description" content="Compare three 20-day Japan routes, November 18 to December 7, 2026. Daily departure targets, nights at each stay, and a four-day Tokyo finale.">
+  <title>Northbound / Three Japan routes / Nov 18 - Dec 7, 2026</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23173e37'/%3E%3Cpath d='M16 25V7m-6 6 6-6 6 6' fill='none' stroke='%23f7f4ec' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
@@ -18,20 +18,39 @@
   </header>
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <div class="eyebrow"><span class="tiny-dot"></span> NOV 17 - DEC 6, 2026 / AUTUMN INTO WINTER</div>
+      <div class="eyebrow"><span class="tiny-dot"></span> NOV 18 - DEC 7, 2026 / AUTUMN INTO WINTER</div>
       <h1 id="page-title">North for the journey.<br><em>Tokyo for the finale.</em></h1>
-      <p class="intro">20 days from volcanic shores to early-winter Hokkaido. Two Tokyo days on the way north, then a four-day Tokyo addendum before flying home.</p>
+      <p class="intro">Arrive in Kagoshima November 18 at 15:00. Choose one of three northbound routes, all finishing with Tokyo December 4-7. Daily timings are suggested targets in Japan Standard Time.</p>
       <div class="stats" aria-label="Trip summary">
         <div><strong>20</strong><span>days / 19 nights</span></div>
-        <div><strong>7</strong><span>places to call home</span></div>
+        <div><strong id="stay-count">8</strong><span>hotel stays on this route</span></div>
         <div><strong>3</strong><span>islands to explore</span></div>
       </div>
     </section>
 
     <aside class="season-banner" aria-label="Time-sensitive planning priorities">
-      <strong>Starting in two days: book the anchors now.</strong>
-      <p>Secure Kyoto for November 22-26 and flights on November 28 (Haneda-Hakodate) and December 3 (New Chitose-Haneda). November 21-23 is a holiday weekend. In Hokkaido, plan outdoor sights before dusk, pack warm layers and grippy footwear, and keep indoor alternatives. This is seasonal guidance, not a live forecast or confirmation of availability.</p>
+      <strong>Fixed anchors: November 18, 15:00 arrival / December 4-7 Tokyo finale.</strong>
+      <p>All three options cover 20 calendar days and 19 nights. November 21-23 is a holiday weekend; confirm accommodation and reserved seats now. Only your Kagoshima arrival time is supplied: every other clock time below is a planning target, not a checked train, bus, flight, or attraction schedule. Rework the targets around actual bookings.</p>
     </aside>
+
+    <section class="route-section" aria-labelledby="routes-heading">
+      <span class="eyebrow">THREE WAYS NORTH</span>
+      <h2 id="routes-heading">Choose the rhythm of the trip.</h2>
+      <p class="muted">Switch routes to update the map, stays and all 20 daily schedules. Internal flight counts exclude your inbound flight to Kagoshima and international departure.</p>
+      <div id="route-picker" class="route-picker" role="group" aria-label="Choose a route"></div>
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Route differences comparison">
+        <table class="comparison-table">
+          <caption>What changes between the three routes</caption>
+          <thead><tr><th scope="col">Route</th><th scope="col">Days / nights at each stay</th><th scope="col">Gain &amp; trade-off</th><th scope="col">Longest northbound transfer &amp; cost</th></tr></thead>
+          <tbody id="comparison-body"></tbody>
+        </table>
+      </div>
+      <p class="muted">Every route also has the same December 4 Sapporo-to-Tokyo flight day: budget roughly 7-8 hours hotel-to-hotel with conservative airport buffers. Cost comparisons are qualitative, not live quotes.</p>
+      <div id="route-summary" class="route-summary" aria-live="polite" aria-atomic="true"></div>
+      <h3 class="stay-breakdown-heading">Your stays / days &amp; nights</h3>
+      <p class="muted">Days below are itinerary days assigned to that base, including arrival. The next base owns the transfer-out day. Check-out dates therefore extend past the last assigned day; these are not counts of full sightseeing days. Tokyo finale includes departure.</p>
+      <div id="stay-breakdown" class="stay-breakdown" role="group" aria-label="Days and nights at each stay"></div>
+    </section>
 
     <section class="journey-layout" id="explorer" aria-label="Interactive itinerary">
       <div class="map-card">
@@ -41,7 +60,7 @@
         <div class="map-wrap">
           <svg viewBox="0 0 600 580" role="img" aria-labelledby="map-title map-description" class="route-map">
             <title id="map-title">Japan's northbound itinerary</title>
-            <desc id="map-description">A schematic map from Kagoshima through Fukuoka, Hiroshima, Kyoto, Tokyo, Hakodate, and Sapporo, then back to Tokyo for a four-day addendum. Tokyo to Hakodate and Sapporo to Tokyo are flights; other transfers are by train. Use the Tokyo finale button below for the return stay.</desc>
+            <desc id="map-description">A schematic route map updated by the selected itinerary. Solid lines are trains; dashed lines are flights. Use the Tokyo finale button for the return stay.</desc>
             <defs>
               <pattern id="water-grid" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#d5ded8"/></pattern>
             </defs>
@@ -53,17 +72,15 @@
               <path d="M390 150 409 126 412 101 433 89 445 57 468 78 500 64 513 84 548 91 532 120 508 137 483 130 463 151 440 145 422 163 411 152 397 167Z"/>
             </g>
             <g class="island-labels"><text x="34" y="370">KYUSHU</text><text x="265" y="266">HONSHU</text><text x="465" y="43">HOKKAIDO</text><text x="145" y="484">SHIKOKU</text></g>
-            <path d="M96 472 109 420 180 391 268 376 370 324" class="rail-line"/>
-            <path d="M370 324 Q501 231 413 148" class="flight-line"/>
-            <path d="M413 148 461 109" class="rail-line"/>
+            <g id="route-lines"></g>
             <path d="M461 109 Q565 231 370 324" class="return-line" id="return-flight"/>
-            <text x="457" y="242" class="flight-label">FLIGHT</text>
             <text x="500" y="185" class="flight-label">RETURN</text>
             <g class="map-stop" data-map-stop="kagoshima"><circle cx="96" cy="472" r="7"/><text x="118" y="503">Kagoshima</text></g>
             <g class="map-stop" data-map-stop="fukuoka"><circle cx="109" cy="420" r="7"/><text x="25" y="407">Fukuoka</text></g>
             <g class="map-stop" data-map-stop="hiroshima"><circle cx="180" cy="391" r="7"/><text x="145" y="361">Hiroshima</text></g>
             <g class="map-stop" data-map-stop="kyoto"><circle cx="268" cy="376" r="7"/><text x="253" y="435">Kyoto</text></g>
             <g class="map-stop" data-map-stop="tokyo"><circle cx="370" cy="324" r="7"/><text x="388" y="342">Tokyo</text></g>
+            <g class="map-stop" data-map-stop="sendai"><circle cx="399" cy="255" r="7"/><text x="317" y="247">Sendai</text></g>
             <g class="map-stop" data-map-stop="hakodate"><circle cx="413" cy="148" r="7"/><text x="324" y="139">Hakodate</text></g>
             <g class="map-stop" data-map-stop="sapporo"><circle cx="461" cy="109" r="7"/><text x="480" y="110">Sapporo</text></g>
             <g fill="#65776b" font-size="11"><text x="33" y="540">SCHEMATIC MAP / NOT TO SCALE</text><text x="548" y="495">N</text><path d="M553 528V506m-4 5 4-5 4 5" fill="none" stroke="#65776b"/></g>
@@ -88,7 +105,7 @@
     <aside class="addendum-banner" aria-labelledby="addendum-heading">
       <span class="eyebrow">THE TOKYO ADDENDUM / DAYS 17-20</span>
       <h2 id="addendum-heading">Four days saved for the city.</h2>
-      <p>December 3-6: fly back from Hokkaido, enjoy Meiji Shrine and Shibuya, keep a free day for art, shopping, or Kamakura, then depart from Tokyo. Four calendar days means a flight-in day, two full sightseeing days, and a departure day; three nights in Tokyo.</p>
+      <p>December 4-7 on every route: fly back from Hokkaido, enjoy Meiji Shrine and Shibuya, keep a free day for art, shopping, Asakusa or Kamakura, then depart from Tokyo. <strong>4 calendar days / 3 nights</strong>: a flight-in day, two full sightseeing days, and a departure day.</p>
       <a href="#timeline-heading">Explore the timeline below &#8595;</a>
     </aside>
 
@@ -110,14 +127,14 @@
     <section id="travel-notes" class="notes-section" aria-labelledby="notes-heading">
       <span class="eyebrow">A SMOOTHER JOURNEY</span><h2 id="notes-heading">A few things worth knowing.</h2>
       <div class="notes-grid">
-        <article><span class="note-number">01 / ARRIVE &amp; DEPART</span><h3>Fly in south. Finish in Tokyo.</h3><p>Arrive in Kagoshima on November 17. Fly Haneda-Hakodate November 28 and New Chitose-Haneda December 3. Depart internationally from Tokyo December 6; confirm Haneda versus Narita. The return to Tokyo separates the Hokkaido flight from departure by three nights.</p></article>
-        <article><span class="note-number">02 / BOOKING PRIORITIES</span><h3>The holiday weekend matters.</h3><p>Reserve Kyoto's four nights (November 22-26) and the November 22 shinkansen first. November 23 is Labor Thanksgiving Day. Osaka moves to that holiday; Arashiyama moves to November 25, still a busy foliage-season day. Book flights, key hotels, and timed-entry attractions now.</p></article>
-        <article><span class="note-number">03 / PACK &amp; TRANSFER</span><h3>Two seasons in one bag.</h3><p>Bring layers, a warm windproof outer layer, gloves, and grippy waterproof shoes. Keep Kyoto as the base for Osaka and Nara. Ask your first Tokyo hotel about storing a bag until your return; do not assume storage is available. Compare rail tickets with passes, excluding both domestic flights.</p></article>
-        <article><span class="note-number">04 / DAYLIGHT &amp; WEATHER</span><h3>Winter-ready, not snow-promised.</h3><p>Hokkaido on November 28-December 2 means early winter, possible ice, and sunset around 4 pm. Prioritize outdoor visits before dusk. No guaranteed snow, ski opening, illumination dates, or foliage peak. December 2 is a flexible city day; check forecasts, opening hours, and transport alerts daily.</p></article>
+        <article><span class="note-number">01 / ARRIVE &amp; DEPART</span><h3>The anchors are shared.</h3><p>Land in Kagoshima November 18 at 15:00. All routes fly New Chitose-Haneda December 4 and depart internationally from Tokyo December 7, leaving three Tokyo nights between flights. Confirm the final airport and departure time; December 7 timings stay relative until those are known.</p></article>
+        <article><span class="note-number">02 / BOOKING PRIORITIES</span><h3>The holiday weekend matters.</h3><p>November 23 is Labor Thanksgiving Day. Routes A and C transfer Hiroshima-Kyoto that day, staying November 23-27. Route B reaches Kyoto November 25 and leaves November 30. All are in foliage season. Confirm rooms, seats, flights and timed attractions; no availability is assumed.</p></article>
+        <article><span class="note-number">03 / PACK &amp; TRANSFER</span><h3>Two seasons in one bag.</h3><p>Bring layers, a warm windproof coat, gloves and grippy waterproof shoes. Stay in Kyoto for Osaka and Nara. Allow 30-60 minutes of hotel-to-station access before the suggested rail target, and aim to reach domestic terminals at least 90 minutes before the booked flight, or earlier if required.</p></article>
+        <article><span class="note-number">04 / DAYLIGHT &amp; WEATHER</span><h3>Winter-ready, not snow-promised.</h3><p>Hokkaido in late November and early December means possible ice and sunset around 4 pm. Finish exposed walking before dusk and keep indoor alternatives. No guaranteed snow, ski opening, illumination dates or foliage peak. All schedule times are JST; check forecasts and service alerts each day.</p></article>
       </div>
-      <p class="source-links">Before travel: <a href="https://www.japan.travel/en/guide/november/">JNTO November guide</a> / <a href="https://www.jma.go.jp/bosai/map.html">JMA weather and warnings</a> / <a href="https://www.jrhokkaido.co.jp/global/english/">JR Hokkaido service information</a>. Approximate journey times are not live timetables; bookings and current restrictions have not been verified.</p>
+      <p class="source-links">Check before booking: <a href="https://www.koj-ab.co.jp/en/access/">Kagoshima Airport access</a> / <a href="https://www.japan.travel/en/guide/november/">JNTO November guide</a> / <a href="https://www.jma.go.jp/bosai/map.html">JMA warnings</a> / <a href="https://www.jreast.co.jp/multi/en/">JR East</a> / <a href="https://www.jrhokkaido.co.jp/global/english/">JR Hokkaido</a>. These are planning references, not verification of the dated services. No live fares, transport departure times, opening hours or availability are confirmed.</p>
     </section>
-    <noscript><p class="noscript">November 17-December 6, 2026: Kagoshima (days 1-2), Fukuoka (3), Hiroshima (4-5), Kyoto (6-9), Tokyo (10-11), Hakodate (12-13), Sapporo (14-16), then the Tokyo addendum (17-20). Day 20 is departure from Tokyo. Enable JavaScript for dated daily details.</p></noscript>
+    <noscript><p class="noscript">November 18-December 7, 2026: all routes start with a 15:00 Kagoshima arrival and end with Tokyo December 4-7 (4 days / 3 nights). Choose A for the original mix, B for fewer moves and no Hakodate, or C for Sendai and rail north. Enable JavaScript for route comparisons, stay lengths and suggested daily departure timings.</p></noscript>
   </main>
   <footer><span class="brand">NORTHBOUND / JAPAN</span><span>A journey to look forward to. <a href="#page-title">Back to top &#8593;</a></span></footer>
 </body>

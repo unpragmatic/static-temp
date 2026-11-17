@@ -1,12 +1,20 @@
 # Northbound / Japan
 
 A dependency-free, interactive overview of a 20-day Japan trip dated
-November 17-December 6, 2026. Travel from Kagoshima to Sapporo, with a short
-two-day Tokyo stay northbound and a four-calendar-day Tokyo addendum at the end.
+November 18-December 7, 2026, arriving at Kagoshima Airport at 15:00.
+Compare three selectable routes: A (balanced, including two initial Tokyo
+nights and Hakodate), B (fewer moves, flying Kansai-Sapporo), and C (Sendai
+and Matsushima, reaching Hakodate by rail).
+All finish with a four-calendar-day Tokyo addendum, December 4-7.
 The addendum includes arrival, two full sightseeing days, and departure.
-Explore seven cities across eight stays on a schematic route map, select
-dated individual days, and filter by island or Tokyo addendum. Day 20 is
-departure from Tokyo; the trip includes 19 nights.
+The map, stay breakdown, daily schedules, and filters update with the chosen
+route. Stay tiles and the comparison highlight itinerary days, nights, and
+check-in/check-out dates. Days are assigned to the overnight base, with day 20
+assigned to Tokyo for departure; they are not full sightseeing-day counts.
+Each route includes 19 nights. All daily departure targets are Japan Standard
+Time and are suggestions, not checked transport timetables. Only the day 1
+arrival time is supplied; the final hotel departure is relative to the
+international flight because its airport and time have not been supplied.
 
 The plan accounts for the November 21-23 holiday weekend, late-autumn foliage
 opportunities, and early-winter Hokkaido with short daylight and indoor
